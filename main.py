@@ -9,9 +9,9 @@ def text_translator(text='Hello friend', src='en', dest='ru'):
     return translation.text
 
 
-file_open = open('pdf-translate/translate.pdf', 'rb')
+file_open = open('translate.pdf', 'rb')
 pdf = PdfFileReader(file_open)
-with open('pdf-translate/translated.txt', 'w') as file:
+with open('translated.txt', 'w', encoding='UTF-8') as file:
     for i in range(0, pdf.getNumPages()):
         extractedText = pdf.getPage(i).extractText()
         content = extractedText.split('\n')
